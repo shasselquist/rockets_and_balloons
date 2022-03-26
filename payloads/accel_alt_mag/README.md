@@ -36,4 +36,12 @@ gas resistance means that comes off of it. There is some conversion that
 they probably use, so once I figure that out, we're good to go.
 As long as the number changes, we're still learning something.
 ALERT: Turns out this thing is just way way way too slow at making a reading.
-Definitely need to make that go faster, or replace the sensor. 
+Definitely need to make that go faster, or replace the sensor.
+
+OK, ended up replacing the BME680 with the LPS25. We can only do
+Temperature and pressure now, but it reads out way more quickly.
+The payload now reads out every 80ms or so, and I've added
+3 timestamps for the best time resolution. We can interpolate later.
+
+I've left the old code with the BME680, "run_payload_sd_bme680",
+But this should probably never be used with rockets.
